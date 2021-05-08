@@ -1,0 +1,18 @@
+<div>
+  <p *ngIf="isEmailExists" class="alert alert-danger mt-3">Email already exists</p>
+</div>
+<div class="container mt-3 d-flex justify-content-center">
+  <div class="col-4">
+    <input class="form-control me-2" type="search" (keyup)="search($event)" [(ngModel)]="searchValue" placeholder="Search" aria-label="Search">
+  </div>
+</div>
+<div class="mt-4" *ngIf="students.length > 0; else noStudents">
+  <div class="container">
+    <div class="row justify-content-between">
+      <app-student class="col-4 mt-3" *ngFor="let student of students" [studentInfo]="student"></app-student>
+    </div>
+  </div>
+</div>
+<ng-template #noStudents> 
+  <p class="alert alert-danger mt-3">No Students</p>
+</ng-template>

@@ -1,0 +1,37 @@
+<div class="modal fade" id="studentEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update Student</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #myForm="ngForm">
+          <div class="mb-3 row justify-content-center">
+            <div class="col-9">
+              <input type="text" [(ngModel)]="student.name" name="name" class="form-control mt-3" id="nameInput" placeholder="name" minlength="4" maxlength="20" required/>
+              <div class="col-12 mt-3">
+                <p *ngIf="myForm.controls.name && myForm.controls.name.invalid" class="alert alert-danger">
+                  Name minimum length is 4 characters
+                </p>
+              </div>
+              <input type="email" [(ngModel)]="student.email" name="email" class="form-control mt-3" id="emailInput" placeholder="email" [email]="true" required/>
+              <div class="col-12 mt-3">
+                <p *ngIf="myForm.controls.email && myForm.controls.email.invalid" class="alert alert-danger">
+                  Email is not valid
+                </p>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-2">
+                <button type="submit" class="btn btn-success text-center mt-3" data-bs-dismiss="modal" (click)="updateStudent(myForm)" [disabled]="myForm.invalid">
+                  Update
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

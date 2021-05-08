@@ -1,0 +1,17 @@
+<body class="bg-purple">
+  <div class="custom-navbar">
+    <div class="brand-logo">
+        <!-- <img src="http://salehriaz.com/404Page/img/logo.svg" width="80px"> -->
+        <a class="navbar-brand text-decoration-none" id="studentBrand" routerLink="">Students</a>
+    </div>
+    <div class="navbar-links">
+        <ul>
+          <li><a routerLink="">Home</a></li>
+          <!-- Button trigger modal -->
+          <li><a data-bs-toggle="modal" data-bs-target="#studentRegister" class="btn-request" target="_blank">Add a Student</a></li>
+          <app-student-register></app-student-register>
+        </ul>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</body>
